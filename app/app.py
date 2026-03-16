@@ -1,9 +1,10 @@
 import streamlit as st
 import joblib
 import numpy as np
+import os
 
-model = joblib.load('models/churn_model.pkl')
-scaler = joblib.load('models/scaler.pkl')
+model = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'models', 'churn_model.pkl'))
+scaler = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'models', 'scaler.pkl'))
 
 st.set_page_config(page_title="Churn Predictor", page_icon="📊")
 st.title("Customer Churn Predictor")
